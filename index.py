@@ -1,5 +1,7 @@
-
+from start_trivia import start_trivia
 # WELCOME
+
+
 def build_menu():
     print("? ? ? ? ? ? ? ? ? ? ? ? ?")
     print("? ? WELCOME TO TRIVIA ? ?")
@@ -17,4 +19,4 @@ def main_menu():
         start_trivia()
 
 
-build_menu()
+main_menu()
