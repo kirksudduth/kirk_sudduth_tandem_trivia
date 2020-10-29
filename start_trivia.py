@@ -34,8 +34,6 @@ def start_trivia():
             # and check against the correct answer which is
             # a property of 'd'
 
-            # *** if choice == int(f'{index + 1}') ***
-            # !!! what if more than 4 answers?? !!!
             while True:
                 try:
                     choice = int(input("\n>> "))
@@ -50,34 +48,49 @@ def start_trivia():
 
             if choice == 1:
                 if answers[0] == d['correct']:
-                    print("\n\n*** CORRECT ***\n\n")
+                    print("\n\n*~*~*~*~*~*~*~*~*~*~*")
+                    print("*~* :) CORRECT (: *~*")
+                    print("*~*~*~*~*~*~*~*~*~*~*\n\n")
                     score += 1
                 else:
-                    print("\n\n*** INCORRECT ***\n")
+                    print("\n\n*?*?*?*?*?*?*?*?*?*?*?*")
+                    print("*?* :( INCORRECT ): *?*")
+                    print("*?*?*?*?*?*?*?*?*?*?*?*\n")
                     print(d['correct'], 'is the right answer.\n\n')
 
             if choice == 2:
                 if answers[1] == d['correct']:
-                    print("\n\n*** CORRECT ***\n\n")
+                    print("\n\n*~*~*~*~*~*~*~*~*~*~*")
+                    print("*~* :) CORRECT (: *~*")
+                    print("*~*~*~*~*~*~*~*~*~*~*\n\n")
                     score += 1
                 else:
-                    print("\n\n*** INCORRECT ***\n")
+                    print("\n\n*?*?*?*?*?*?*?*?*?*?*?*")
+                    print("*?* :( INCORRECT ): *?*")
+                    print("*?*?*?*?*?*?*?*?*?*?*?*\n")
                     print(d['correct'], 'is the right answer.\n\n')
 
             if choice == 3:
                 if answers[2] == d['correct']:
-                    print("\n\n*** CORRECT ***\n\n")
+                    print("\n\n*~*~*~*~*~*~*~*~*~*~*")
+                    print("*~* :) CORRECT (: *~*")
+                    print("*~*~*~*~*~*~*~*~*~*~*\n\n")
                     score += 1
                 else:
-                    print("\n\n*** INCORRECT ***\n")
+                    print("\n\n*?*?*?*?*?*?*?*?*?*?*?*")
+                    print("*?* :( INCORRECT ): *?*")
+                    print("*?*?*?*?*?*?*?*?*?*?*?*\n")
                     print(d['correct'], 'is the right answer.\n\n')
 
             if choice == 4:
                 if answers[3] == d['correct']:
-                    print("\n\n*** CORRECT ***\n\n")
+                    print("\n\n*~*~*~*~*~*~*~*~*~*~*")
+                    print("*~* :) CORRECT (: *~*")
+                    print("*~*~*~*~*~*~*~*~*~*~*\n\n")
                     score += 1
                 else:
-                    print("\n\n*** INCORRECT ***\n")
+                    print("\n\n*?*?*?*?*?*?*?*?*?*?*?*")
+                    print("*?* :( INCORRECT ): *?*")
+                    print("*?*?*?*?*?*?*?*?*?*?*?*\n")
                     print(d['correct'], 'is the right answer.\n\n')
-
     print(score)
