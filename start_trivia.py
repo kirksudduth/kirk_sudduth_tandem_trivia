@@ -29,13 +29,26 @@ def start_trivia():
 
             for index, a in enumerate(answers):
                 print(f'{index + 1}. {a}')
-            choice = input(">> ")
 
             # take the index of the chosen answer from answers list
             # and check against the correct answer which is
             # a property of 'd'
 
-            if choice == '1':
+            # *** if choice == int(f'{index + 1}') ***
+            # !!! what if more than 4 answers?? !!!
+            while True:
+                try:
+                    choice = int(input("\n>> "))
+                    assert 0 < choice <= len(answers)
+                except ValueError:
+                    print("Please enter an integer.")
+                except AssertionError:
+                    print(
+                        f'Please enter an integer between 1 and {len(answers)}')
+                else:
+                    break
+
+            if choice == 1:
                 if answers[0] == d['correct']:
                     print("\n\n*** CORRECT ***\n\n")
                     score += 1
@@ -43,7 +56,7 @@ def start_trivia():
                     print("\n\n*** INCORRECT ***\n")
                     print(d['correct'], 'is the right answer.\n\n')
 
-            if choice == '2':
+            if choice == 2:
                 if answers[1] == d['correct']:
                     print("\n\n*** CORRECT ***\n\n")
                     score += 1
@@ -51,7 +64,7 @@ def start_trivia():
                     print("\n\n*** INCORRECT ***\n")
                     print(d['correct'], 'is the right answer.\n\n')
 
-            if choice == '3':
+            if choice == 3:
                 if answers[2] == d['correct']:
                     print("\n\n*** CORRECT ***\n\n")
                     score += 1
@@ -59,11 +72,12 @@ def start_trivia():
                     print("\n\n*** INCORRECT ***\n")
                     print(d['correct'], 'is the right answer.\n\n')
 
-            if choice == '4':
+            if choice == 4:
                 if answers[3] == d['correct']:
                     print("\n\n*** CORRECT ***\n\n")
                     score += 1
                 else:
                     print("\n\n*** INCORRECT ***\n")
                     print(d['correct'], 'is the right answer.\n\n')
+
     print(score)
