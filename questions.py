@@ -1,4 +1,5 @@
 import json
+import time
 
 
 def questions_list():
@@ -7,5 +8,6 @@ def questions_list():
         for d in data:
             question = d['question']
             print(f'\n{question}')
+            time.sleep(1.5)
 
-        input("Press Enter to return to main menu.\n\n")
+        input("\n\nPress Enter to return to main menu.\n\n")
