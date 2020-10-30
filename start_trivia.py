@@ -2,6 +2,8 @@ import json
 import random
 import os
 import time
+from answers import get_question_answers, show_answers
+from results import correct, incorrect
 
 
 def start_trivia():
@@ -22,25 +24,9 @@ def start_trivia():
             question = d['question']
             print(f'[?] {question}')
 
-            # added all answers to the answers list
-            # so i can iterate over them for the
-            # trivia questions
-            answers = []
-            answers.append(d['correct'])
-            for incorrect in d['incorrect']:
-                answers.append(incorrect)
+            answers = get_question_answers(d)
 
-            # don't want the answers coming out the
-            # same every time! that's no fun!
-            # imported random up top
-
-            random.shuffle(answers)
-
-            # used the enumerate function with index so
-            # i can number answers for user input
-
-            for index, a in enumerate(answers):
-                print(f'{index + 1}. {a}')
+            show_answers(answers)
 
             # take the index of the chosen answer from answers list
             # and check against the correct answer which is
@@ -60,59 +46,32 @@ def start_trivia():
 
             if choice == 1:
                 if answers[0] == d['correct']:
-                    print("\n\n*~*~*~*~*~*~*~*~*~*~*")
-                    print("*~* :) CORRECT (: *~*")
-                    print("*~*~*~*~*~*~*~*~*~*~*\n\n")
+                    correct()
                     score += 1
-                    time.sleep(.5)
                 else:
-                    print("\n\n*?*?*?*?*?*?*?*?*?*?*?*")
-                    print("*?* :( INCORRECT ): *?*")
-                    print("*?*?*?*?*?*?*?*?*?*?*?*\n")
-                    print(d['correct'], 'is the right answer.\n\n')
-                    time.sleep(1)
+                    incorrect()
 
             if choice == 2:
                 if answers[1] == d['correct']:
-                    print("\n\n*~*~*~*~*~*~*~*~*~*~*")
-                    print("*~* :) CORRECT (: *~*")
-                    print("*~*~*~*~*~*~*~*~*~*~*\n\n")
+                    correct()
                     score += 1
-                    time.sleep(.5)
                 else:
-                    print("\n\n*?*?*?*?*?*?*?*?*?*?*?*")
-                    print("*?* :( INCORRECT ): *?*")
-                    print("*?*?*?*?*?*?*?*?*?*?*?*\n")
-                    print(d['correct'], 'is the right answer.\n\n')
-                    time.sleep(1)
+                    incorrect()
 
             if choice == 3:
                 if answers[2] == d['correct']:
-                    print("\n\n*~*~*~*~*~*~*~*~*~*~*")
-                    print("*~* :) CORRECT (: *~*")
-                    print("*~*~*~*~*~*~*~*~*~*~*\n\n")
+                    correct()
                     score += 1
-                    time.sleep(.5)
                 else:
-                    print("\n\n*?*?*?*?*?*?*?*?*?*?*?*")
-                    print("*?* :( INCORRECT ): *?*")
-                    print("*?*?*?*?*?*?*?*?*?*?*?*\n")
-                    print(d['correct'], 'is the right answer.\n\n')
-                    time.sleep(1)
+                    incorrect()
 
             if choice == 4:
                 if answers[3] == d['correct']:
-                    print("\n\n*~*~*~*~*~*~*~*~*~*~*")
-                    print("*~* :) CORRECT (: *~*")
-                    print("*~*~*~*~*~*~*~*~*~*~*\n\n")
+                    correct()
                     score += 1
-                    time.sleep(.5)
                 else:
-                    print("\n\n*?*?*?*?*?*?*?*?*?*?*?*")
-                    print("*?* :( INCORRECT ): *?*")
-                    print("*?*?*?*?*?*?*?*?*?*?*?*\n")
-                    print(d['correct'], 'is the right answer.\n\n')
-                    time.sleep(1)
+                    incorrect()
+
     if score == 10:
         print(
             f'WHOA. {score}/10\nU SMORT...\nRather, you know all these trivia questions. WAY TO GO!!\n')
