@@ -23,7 +23,7 @@ def main_menu():
             choice = int(input("\n>>> "))
             assert 0 < choice <= 3
         except ValueError:
-            print("Please enter an integer.")
+            print("Please enter an integer. (1, 2 or 3)")
         except AssertionError:
             print("Please enter either 1, 2 or 3.")
         else:
