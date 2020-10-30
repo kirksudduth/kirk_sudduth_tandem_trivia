@@ -8,7 +8,16 @@ def start_trivia():
     score = 0
     with open("data.json") as json_file:
         data = json.load(json_file)
-        for d in data:
+
+        # don't want users questions to be the same
+        # every time
+        random.shuffle(data)
+
+        # only getting the first 10 items in the shuffled
+        # data list because we only want a 10 question quiz
+        #  --- --- --- --- --- --- --- --- --- --- ---
+        # [:10] implies that start at 0 index to 9 index
+        for d in data[:10]:
             os.system('cls' if os.name == 'nt' else 'clear')
             question = d['question']
             print(f'[?] {question}')
@@ -16,7 +25,6 @@ def start_trivia():
             # added all answers to the answers list
             # so i can iterate over them for the
             # trivia questions
-
             answers = []
             answers.append(d['correct'])
             for incorrect in d['incorrect']:
@@ -105,22 +113,19 @@ def start_trivia():
                     print("*?*?*?*?*?*?*?*?*?*?*?*\n")
                     print(d['correct'], 'is the right answer.\n\n')
                     time.sleep(1)
-    if score == 21:
+    if score == 10:
         print(
-            f'WHOA. {score}/21\nU SMORT...\nRather, you know all these trivia questions. WAY TO GO!!\n')
+            f'WHOA. {score}/10\nU SMORT...\nRather, you know all these trivia questions. WAY TO GO!!\n')
         input("Press Enter to return to main menu.")
-    if 18 < score < 21:
+    if score == 9:
         print(
-            f'You did great! {score}/21\nAlmost got them all correct.\nPersistence pays interest.\n')
+            f'You did great! {score}/10\nAlmost got them all correct.\nPersistence pays interest.\n')
         input("Press Enter to return to main menu.")
-    if 16 < score < 19:
+    if 6 < score < 9:
         print(
-            f'These aren\'t things everyone knows, obviously.\nTry again to score higher than {score}/21\n')
+            f'These aren\'t things everyone knows, obviously. ¯\_(ツ)_/¯\nTry again to score higher than {score}/10\n')
         input("Press Enter to return to main menu.")
-    if 14 < score < 17:
-        print(f'{score}/21 is not great, but it could\'ve been worse ¯\_(ツ)_/¯\n')
-        input("Press Enter to return to main menu.")
-    if score < 15:
+    if score < 7:
         print(
-            f'Play again?\n{score}/21 is an unacceptable score for someone so smart ಠ_ಠ\n')
+            f'Play again?\n{score}/10 is an unacceptable score for someone so smart ಠ_ಠ\n')
         input("Press Enter to return to main menu.")
