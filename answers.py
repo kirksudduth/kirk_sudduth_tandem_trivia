@@ -16,3 +16,8 @@ def get_question_answers(d):
     # imported random up top
     random.shuffle(answers)
     return answers
+
+
+def show_answers(answers):
+    for index, a in enumerate(answers):
+        print(f'{index + 1}. {a}')
