@@ -1,6 +1,5 @@
 import unittest
 import sys
-import unittest.mock as mock
 from io import StringIO
 from unittest.mock import patch
 from answers import get_question_answers, show_answers
