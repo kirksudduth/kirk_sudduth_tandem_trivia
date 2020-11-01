@@ -25,7 +25,7 @@ _An interpretation by [Kirk Sudduth](https://github.com/kirksudduth "This was fu
 
 ## Tests
 
-- In your `tandem_trivia` directory run the `python -m unittest` command to run the two tests I incorporated into the program
+- In your `tandem_trivia` directory run the `python -m unittest` command to run the three tests I incorporated into the program
 - The two initial tests check that all answers were getting added correctly to the answers list so they could be shuffled and iterated over to provide options for user.
 - The third test checks to make sure the list of answers is printed correctly in the terminal
 
