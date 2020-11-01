@@ -18,10 +18,16 @@ _An interpretation by [Kirk Sudduth](https://github.com/kirksudduth "This was fu
 
 ## Setup
 
-1.  Enter local Terminal directory where you would like project stored
+1.  Enter local Terminal directory where you would like the project to live
 1.  Run `git clone https://github.com/kirksudduth/kirk_sudduth_tandem_trivia.git`
 1.  Run `python index.py`
 1.  Enjoy the trivia!
+
+## Tests
+
+- In your `tandem_trivia` directory run the `python -m unittest` command to run the two tests I incorporated into the program
+- The two initial tests check that all answers were getting added correctly to the answers list so they could be shuffled and iterated over to provide options for user.
+- The third test checks to make sure the list of answers is printed correctly in the terminal
 
 ## Thanks
 

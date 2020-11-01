@@ -37,8 +37,9 @@ def main_menu():
         questions_list()
         main_menu()
 
-    if choice != 3:
-        main_menu()
+    if choice == 3:
+        # that makes sense -- wasn't using the exit() function before
+        exit()
 
 
 main_menu()
