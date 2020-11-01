@@ -49,28 +49,28 @@ def start_trivia():
                     correct()
                     score += 1
                 else:
-                    incorrect()
+                    incorrect(d)
 
             if choice == 2:
                 if answers[1] == d['correct']:
                     correct()
                     score += 1
                 else:
-                    incorrect()
+                    incorrect(d)
 
             if choice == 3:
                 if answers[2] == d['correct']:
                     correct()
                     score += 1
                 else:
-                    incorrect()
+                    incorrect(d)
 
             if choice == 4:
                 if answers[3] == d['correct']:
                     correct()
                     score += 1
                 else:
-                    incorrect()
+                    incorrect(d)
 
     if score == 10:
         print(
